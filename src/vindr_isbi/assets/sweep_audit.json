@@ -1,0 +1,20 @@
+{
+  "project": "kaanbuyukdemirci/vindr-global-pad-multires-v2",
+  "exported_at": "2026-09-23T17:44:47.847423+00:00",
+  "total_runs": 558,
+  "states": {
+    "finished": 549,
+    "crashed": 9
+  },
+  "completed_test_runs": 534,
+  "selected_presets": 107,
+  "selection": "maximum validation mAP50, then lexicographically maximum run_id; no test cutoff",
+  "paper_filtered_presets": 57,
+  "paper_best": "dino_convnext_s_fpn-h1600_w1280",
+  "missing_model_resolution_pairs": [
+    [
+      "dino_hrnet_w32_hrfpn",
+      1600
+    ]
+  ]
+}

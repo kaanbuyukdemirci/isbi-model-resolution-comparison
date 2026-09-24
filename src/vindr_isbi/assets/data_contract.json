@@ -1,0 +1,284 @@
+{
+  "h1024_w832": {
+    "train": {
+      "annotation": "annotations/h1024_w832/instances_train.json",
+      "sha256": "9816c0c348be22d3dc4f430cab89658a3821672efd4d7592b9cc1e038c4348c4",
+      "shape": [
+        1024,
+        832
+      ],
+      "selected_images": 929,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1024_w832/train/cca141f804a8ab8b584d63102bc7f3f7__aad38467d1f04cedf300c9c8305a3536.pt",
+          "values_sha256": "61fcd1a9617b745e05bb225ecc1687c50afe13950329350cd55963e4e9d00ddd"
+        }
+      ]
+    },
+    "val": {
+      "annotation": "annotations/h1024_w832/instances_val.json",
+      "sha256": "eed5f519d491d0fb0c033e4ac2bf57429c5ea26ee29e360d6fd2068066b91713",
+      "shape": [
+        1024,
+        832
+      ],
+      "selected_images": 151,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1024_w832/val/711543a7b6910a0e41ef126205eca9a9__801865ddfa426b09cfe44edd40c6179b.pt",
+          "values_sha256": "ac6ba8cce411af98b6b474a8c95ba2d14b2f23e0d2a891e0413b4c6232084db8"
+        }
+      ]
+    },
+    "test": {
+      "annotation": "annotations/h1024_w832/instances_test.json",
+      "sha256": "aa868f71bf6a1d715146cf0435f3732e8ef296cf937e6eb4400c2c39cc791e6f",
+      "shape": [
+        1024,
+        832
+      ],
+      "selected_images": 219,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1024_w832/test/1734a10c08f2565315493df00a2fd134__396bea28fd4be11598bc53bf5f2b7460.pt",
+          "values_sha256": "9709bf456bd1d24b4f8b5e6d0d6f9134598bbf3e9822cd0855bb7301f269077a"
+        }
+      ]
+    }
+  },
+  "h1280_w1024": {
+    "train": {
+      "annotation": "annotations/h1280_w1024/instances_train.json",
+      "sha256": "bdf4b062f61f264c90dbb35c007d81b100b9dac87616d6d2b8d29354da261959",
+      "shape": [
+        1280,
+        1024
+      ],
+      "selected_images": 929,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1280_w1024/train/cca141f804a8ab8b584d63102bc7f3f7__aad38467d1f04cedf300c9c8305a3536.pt",
+          "values_sha256": "65aae2fc02ef40112da056637eba9ead76a0d45dd8250e6d26fb47c569917d23"
+        }
+      ]
+    },
+    "val": {
+      "annotation": "annotations/h1280_w1024/instances_val.json",
+      "sha256": "7cca05d32aeb9d286b5a82c3d2f9ea1c53419e4686629e1ca74de046ae929d65",
+      "shape": [
+        1280,
+        1024
+      ],
+      "selected_images": 151,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1280_w1024/val/711543a7b6910a0e41ef126205eca9a9__801865ddfa426b09cfe44edd40c6179b.pt",
+          "values_sha256": "e940f1c7715cc355c2479a250ccfa5e8b8accbeae42063fcd682ff0733e7a6c1"
+        }
+      ]
+    },
+    "test": {
+      "annotation": "annotations/h1280_w1024/instances_test.json",
+      "sha256": "3eba68efddbf276096daa077d8418fe11895c441f37b71679e3f83c300216250",
+      "shape": [
+        1280,
+        1024
+      ],
+      "selected_images": 219,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1280_w1024/test/1734a10c08f2565315493df00a2fd134__396bea28fd4be11598bc53bf5f2b7460.pt",
+          "values_sha256": "5cbfe6ebe520e1382a0a67e83c50815c881026e7fd59caf23bb97a0a35829ade"
+        }
+      ]
+    }
+  },
+  "h1600_w1280": {
+    "train": {
+      "annotation": "annotations/h1600_w1280/instances_train.json",
+      "sha256": "f4619d8e394a8e13c336f4271d2bf050c180a3705a303747c5f72aacf0fe735e",
+      "shape": [
+        1600,
+        1280
+      ],
+      "selected_images": 929,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1600_w1280/train/cca141f804a8ab8b584d63102bc7f3f7__aad38467d1f04cedf300c9c8305a3536.pt",
+          "values_sha256": "a50e3e3cf626ec68415d9d2af7c78194cd6a17f405f111a6e7b0ca1bd3073d65"
+        }
+      ]
+    },
+    "val": {
+      "annotation": "annotations/h1600_w1280/instances_val.json",
+      "sha256": "b2bcc66f8be9bba26c6c0bfcf84052c5a091b071ef65d58027658829c29a40ae",
+      "shape": [
+        1600,
+        1280
+      ],
+      "selected_images": 151,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1600_w1280/val/711543a7b6910a0e41ef126205eca9a9__801865ddfa426b09cfe44edd40c6179b.pt",
+          "values_sha256": "544b228e1191792d4547fb894d2bbc565c4cac26e28c2d3fe13dbb57d99a2c78"
+        }
+      ]
+    },
+    "test": {
+      "annotation": "annotations/h1600_w1280/instances_test.json",
+      "sha256": "c802e51a2849755cb3b4ba9596148d7e1e9eebb626e903c08fd2e0f28fb176b5",
+      "shape": [
+        1600,
+        1280
+      ],
+      "selected_images": 219,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h1600_w1280/test/1734a10c08f2565315493df00a2fd134__396bea28fd4be11598bc53bf5f2b7460.pt",
+          "values_sha256": "9637c4eabbec365b68411cd592cebe7bf2249dcdddaf0091ca399d499482d584"
+        }
+      ]
+    }
+  },
+  "h512_w416": {
+    "train": {
+      "annotation": "annotations/h512_w416/instances_train.json",
+      "sha256": "af83e518affa4346a4967e245eaa1db86b3351fa74ec5742c3daed651a870129",
+      "shape": [
+        512,
+        416
+      ],
+      "selected_images": 929,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h512_w416/train/cca141f804a8ab8b584d63102bc7f3f7__aad38467d1f04cedf300c9c8305a3536.pt",
+          "values_sha256": "d30de0e718a5c575660f18c2a1e1b17d242ccbe6f72fa6071a61e13663354816"
+        }
+      ]
+    },
+    "val": {
+      "annotation": "annotations/h512_w416/instances_val.json",
+      "sha256": "346f31793daa02320609a242a118af7a1e6063d64fbc50a74c0acf5a189f07b3",
+      "shape": [
+        512,
+        416
+      ],
+      "selected_images": 151,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h512_w416/val/711543a7b6910a0e41ef126205eca9a9__801865ddfa426b09cfe44edd40c6179b.pt",
+          "values_sha256": "f1eb19a764cf2e5ae4cbd0cdf51ccbd1de71b49ff3036613721d897a7e7d837d"
+        }
+      ]
+    },
+    "test": {
+      "annotation": "annotations/h512_w416/instances_test.json",
+      "sha256": "06c6b7407656de503121ed4edeeae7f75a4c31ad5161681cf030bca12c09fbe9",
+      "shape": [
+        512,
+        416
+      ],
+      "selected_images": 219,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h512_w416/test/1734a10c08f2565315493df00a2fd134__396bea28fd4be11598bc53bf5f2b7460.pt",
+          "values_sha256": "9526f97516ab63073cb76a71ac9dec2fce8ddca62ca07d72b552fc914001f320"
+        }
+      ]
+    }
+  },
+  "h640_w512": {
+    "train": {
+      "annotation": "annotations/h640_w512/instances_train.json",
+      "sha256": "d5e1b1fa31c2b3836d00282b55050a5e77a8da7b366e5e0ea914d0b9100aec5d",
+      "shape": [
+        640,
+        512
+      ],
+      "selected_images": 929,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h640_w512/train/cca141f804a8ab8b584d63102bc7f3f7__aad38467d1f04cedf300c9c8305a3536.pt",
+          "values_sha256": "6a750ee4ba200f0e1a07d8e18e0c8e8bc1ab95969fe52849314204db56f03c81"
+        }
+      ]
+    },
+    "val": {
+      "annotation": "annotations/h640_w512/instances_val.json",
+      "sha256": "8845c24c6499e3b4da70ba493f2750c114fc586952d2fb6d55c9699fab173a82",
+      "shape": [
+        640,
+        512
+      ],
+      "selected_images": 151,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h640_w512/val/711543a7b6910a0e41ef126205eca9a9__801865ddfa426b09cfe44edd40c6179b.pt",
+          "values_sha256": "21fd916a5c579153b24c795d9b965b79f0f7bfbe3d682c1874cb9369cc10b5cb"
+        }
+      ]
+    },
+    "test": {
+      "annotation": "annotations/h640_w512/instances_test.json",
+      "sha256": "523d500293071100e3ab83b78ae1b7db9ada135d8c6d35c8b5e6d1d01b9d5e64",
+      "shape": [
+        640,
+        512
+      ],
+      "selected_images": 219,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h640_w512/test/1734a10c08f2565315493df00a2fd134__396bea28fd4be11598bc53bf5f2b7460.pt",
+          "values_sha256": "8d5c0ea5b9622f5137a6249bac09014319bf780de21aa863de21d131c3a015fa"
+        }
+      ]
+    }
+  },
+  "h800_w640": {
+    "train": {
+      "annotation": "annotations/h800_w640/instances_train.json",
+      "sha256": "5018a6ee11a9e8b9016198c0304f7549811d7858b652ee930e13550519ef9d53",
+      "shape": [
+        800,
+        640
+      ],
+      "selected_images": 929,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h800_w640/train/cca141f804a8ab8b584d63102bc7f3f7__aad38467d1f04cedf300c9c8305a3536.pt",
+          "values_sha256": "0ee4c52f192a9c4191320fb0f40a22e7773d02c441151562128a4af1f64ff3a3"
+        }
+      ]
+    },
+    "val": {
+      "annotation": "annotations/h800_w640/instances_val.json",
+      "sha256": "9ef34ab3b0c91bb0428fcfae0e07e9b5f800d5ceccecec366d3d8a1b8468480a",
+      "shape": [
+        800,
+        640
+      ],
+      "selected_images": 151,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h800_w640/val/711543a7b6910a0e41ef126205eca9a9__801865ddfa426b09cfe44edd40c6179b.pt",
+          "values_sha256": "1ef49bd94cf5737bf0415c0f5e39beacca0b77cd887e2dc9ba0ffb94261ecf9f"
+        }
+      ]
+    },
+    "test": {
+      "annotation": "annotations/h800_w640/instances_test.json",
+      "sha256": "3d229cc3ec3a31cb943285181ffe8f0c4e01e7f1bfdc42644d9a3f5710465203",
+      "shape": [
+        800,
+        640
+      ],
+      "selected_images": 219,
+      "tensor_samples": [
+        {
+          "file": "images/float32/h800_w640/test/1734a10c08f2565315493df00a2fd134__396bea28fd4be11598bc53bf5f2b7460.pt",
+          "values_sha256": "f707d073faebf93ea8ea7718f8424dbc24410f45857785f47b0c528f05121a67"
+        }
+      ]
+    }
+  }
+}

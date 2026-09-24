@@ -1,0 +1,703 @@
+{
+  "name": "tood_r50_fpn-h1280_w1024",
+  "model": "tood_r50_fpn",
+  "variant": "h1280_w1024",
+  "height": 1280,
+  "width": 1024,
+  "seed": 42,
+  "backend": "mmdet",
+  "source": {
+    "run_id": "al6az4ic",
+    "run_name": "vindr_global_pad_multires_backbone_detector_v2_007_tood_r50_fpn_981fa695",
+    "url": "https://wandb.ai/kaanbuyukdemirci/vindr-global-pad-multires-v2/runs/al6az4ic",
+    "validation_map50": 0.721,
+    "test_map50": 0.641,
+    "selected_by": "maximum validation mAP50 within model and resolution; run ID breaks ties",
+    "runtime": {
+      "git": {
+        "dirty": true,
+        "revision": "b556cd07928132332ec676a0342c750be0892d5b"
+      },
+      "packages": {
+        "mmcv": "2.1.0",
+        "mmdet": "3.3.0",
+        "mmengine": "0.10.7",
+        "mmpretrain": "1.2.0",
+        "numpy": "1.26.4",
+        "torch": "2.1.0+cu121",
+        "transformers": "4.56.2",
+        "ultralytics": "8.4.91",
+        "vindr-mmdet": "1.0.0"
+      },
+      "platform": "Linux-6.8.0-101-generic-x86_64-with-glibc2.35",
+      "python": "3.10.20"
+    },
+    "checkpoint": {
+      "name": "best_coco_bbox_mass_positive_mAP_50_epoch_8.pth",
+      "sha256": "d83969dce8a80e00c632845411c2a2a9a710ae45ce4586e6cfb5cbe16b1b25b0",
+      "size_bytes": 128796660
+    },
+    "resolved_config_sha256": "bc7da3a25a8dd396a5cc211e3524ba73674444273e9047bb607b4f48d8ecc26d"
+  },
+  "config": {
+    "model": {
+      "_scope_": "mmdet",
+      "backbone": {
+        "depth": 50,
+        "frozen_stages": 1,
+        "init_cfg": {
+          "checkpoint": "torchvision://resnet50",
+          "type": "Pretrained"
+        },
+        "norm_cfg": {
+          "requires_grad": true,
+          "type": "BN"
+        },
+        "norm_eval": true,
+        "num_stages": 4,
+        "out_indices": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "style": "pytorch",
+        "type": "ResNet"
+      },
+      "bbox_head": {
+        "anchor_generator": {
+          "octave_base_scale": 8,
+          "ratios": [
+            1.0
+          ],
+          "scales_per_octave": 1,
+          "strides": [
+            8,
+            16,
+            32,
+            64,
+            128
+          ],
+          "type": "AnchorGenerator"
+        },
+        "anchor_type": "anchor_free",
+        "bbox_coder": {
+          "target_means": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "target_stds": [
+            0.1,
+            0.1,
+            0.2,
+            0.2
+          ],
+          "type": "DeltaXYWHBBoxCoder"
+        },
+        "feat_channels": 256,
+        "in_channels": 256,
+        "initial_loss_cls": {
+          "activated": true,
+          "alpha": 0.25,
+          "gamma": 2.0,
+          "loss_weight": 1.0,
+          "type": "FocalLoss",
+          "use_sigmoid": true
+        },
+        "loss_bbox": {
+          "loss_weight": 2.0,
+          "type": "GIoULoss"
+        },
+        "loss_cls": {
+          "activated": true,
+          "beta": 2.0,
+          "loss_weight": 1.0,
+          "type": "QualityFocalLoss",
+          "use_sigmoid": true
+        },
+        "num_classes": 1,
+        "stacked_convs": 6,
+        "type": "VindrAmpSafeTOODHead"
+      },
+      "data_preprocessor": {
+        "batch_augments": null,
+        "bgr_to_rgb": true,
+        "mean": [
+          123.675,
+          116.28,
+          103.53
+        ],
+        "pad_size_divisor": 32,
+        "std": [
+          58.395,
+          57.12,
+          57.375
+        ],
+        "type": "DetDataPreprocessor"
+      },
+      "neck": {
+        "add_extra_convs": "on_output",
+        "in_channels": [
+          256,
+          512,
+          1024,
+          2048
+        ],
+        "num_outs": 5,
+        "out_channels": 256,
+        "start_level": 1,
+        "type": "FPN"
+      },
+      "test_cfg": {
+        "max_per_img": 100,
+        "min_bbox_size": 0,
+        "nms": {
+          "iou_threshold": 0.6,
+          "type": "nms"
+        },
+        "nms_pre": 1000,
+        "score_thr": 0.05
+      },
+      "train_cfg": {
+        "allowed_border": -1,
+        "alpha": 1,
+        "assigner": {
+          "topk": 17,
+          "type": "TaskAlignedAssigner"
+        },
+        "beta": 6,
+        "debug": false,
+        "initial_assigner": {
+          "topk": 9,
+          "type": "ATSSAssigner"
+        },
+        "initial_epoch": 4,
+        "pos_weight": -1
+      },
+      "type": "TOOD"
+    },
+    "optim_wrapper": {
+      "_scope_": "mmdet",
+      "accumulative_counts": 1,
+      "clip_grad": {
+        "max_norm": 10.0,
+        "norm_type": 2
+      },
+      "loss_scale": "dynamic",
+      "optimizer": {
+        "lr": 0.0005,
+        "momentum": 0.9,
+        "type": "SGD",
+        "weight_decay": 0.0001
+      },
+      "type": "AmpOptimWrapper"
+    },
+    "param_scheduler": [
+      {
+        "begin": 0,
+        "by_epoch": false,
+        "end": 250,
+        "start_factor": 0.001,
+        "type": "LinearLR"
+      },
+      {
+        "begin": 0,
+        "by_epoch": true,
+        "end": 25,
+        "gamma": 0.1,
+        "milestones": [
+          16,
+          23
+        ],
+        "type": "MultiStepLR"
+      }
+    ],
+    "randomness": {
+      "deterministic": false,
+      "diff_rank_seed": false,
+      "seed": 42
+    },
+    "env_cfg": {
+      "cudnn_benchmark": false,
+      "dist_cfg": {
+        "backend": "nccl"
+      },
+      "mp_cfg": {
+        "mp_start_method": "fork",
+        "opencv_num_threads": 0
+      }
+    },
+    "default_hooks": {
+      "checkpoint": {
+        "_scope_": "mmdet",
+        "interval": 1,
+        "max_keep_ckpts": 1,
+        "rule": "greater",
+        "save_best": "coco/bbox_mass_positive_mAP_50",
+        "type": "CheckpointHook"
+      },
+      "logger": {
+        "_scope_": "mmdet",
+        "interval": 50,
+        "type": "LoggerHook"
+      },
+      "param_scheduler": {
+        "_scope_": "mmdet",
+        "type": "ParamSchedulerHook"
+      },
+      "sampler_seed": {
+        "_scope_": "mmdet",
+        "type": "DistSamplerSeedHook"
+      },
+      "timer": {
+        "_scope_": "mmdet",
+        "type": "IterTimerHook"
+      },
+      "visualization": {
+        "_scope_": "mmdet",
+        "draw": false,
+        "type": "DetVisualizationHook"
+      }
+    },
+    "custom_hooks": [
+      {
+        "check_finite": true,
+        "min_delta": 0.002,
+        "monitor": "coco/bbox_mass_positive_mAP_50",
+        "patience": 10,
+        "rule": "greater",
+        "strict": true,
+        "type": "EarlyStoppingHook"
+      }
+    ],
+    "default_scope": "mmdet",
+    "log_level": "INFO",
+    "log_processor": {
+      "_scope_": "mmdet",
+      "by_epoch": true,
+      "type": "LogProcessor",
+      "window_size": 50
+    },
+    "load_from": "https://download.openmmlab.com/mmdetection/v2.0/tood/tood_r50_fpn_1x_coco/tood_r50_fpn_1x_coco_20211210_103425-20e20746.pth",
+    "train_cfg": {
+      "_scope_": "mmdet",
+      "max_epochs": 25,
+      "type": "EpochBasedTrainLoop",
+      "val_interval": 1
+    },
+    "val_cfg": {
+      "_scope_": "mmdet",
+      "type": "ValLoop"
+    },
+    "test_cfg": {
+      "_scope_": "mmdet",
+      "type": "TestLoop"
+    },
+    "train_dataloader": {
+      "batch_sampler": {
+        "_scope_": "mmdet",
+        "type": "AspectRatioBatchSampler"
+      },
+      "batch_size": 4,
+      "dataset": {
+        "_scope_": "mmdet",
+        "ann_file": "annotations/train.json",
+        "backend_args": null,
+        "data_prefix": {
+          "img": ""
+        },
+        "data_root": "",
+        "filter_cfg": {
+          "filter_empty_gt": false,
+          "min_size": 1
+        },
+        "metainfo": {
+          "classes": [
+            "Mass"
+          ],
+          "palette": [
+            [
+              220,
+              20,
+              60
+            ]
+          ]
+        },
+        "pipeline": [
+          {
+            "rgb_to_bgr": true,
+            "scale_to_255": true,
+            "type": "VindrLoadFloat32TensorFromFile"
+          },
+          {
+            "type": "LoadAnnotations",
+            "with_bbox": true
+          },
+          {
+            "keep_ratio": true,
+            "scale": [
+              1024,
+              1280
+            ],
+            "type": "Resize"
+          },
+          {
+            "border": [
+              0,
+              0
+            ],
+            "border_val": [
+              0,
+              0,
+              0
+            ],
+            "max_rotate_degree": 2.0,
+            "max_shear_degree": 0.0,
+            "max_translate_ratio": 0.02,
+            "scaling_ratio_range": [
+              0.95,
+              1.05
+            ],
+            "type": "RandomAffine"
+          },
+          {
+            "keep_ratio": true,
+            "scale": [
+              1024,
+              1280
+            ],
+            "type": "Resize"
+          },
+          {
+            "brightness_delta": 0.03,
+            "contrast_range": [
+              0.9,
+              1.1
+            ],
+            "gamma_range": [
+              0.9,
+              1.1
+            ],
+            "per_channel": false,
+            "preserve_zero": true,
+            "prob": 0.5,
+            "type": "VindrRandomIntensity",
+            "zero_tolerance": 0.0
+          },
+          {
+            "per_channel": false,
+            "prob": 0.25,
+            "signal_only": true,
+            "signal_threshold": 0.0,
+            "std_range": [
+              0.003,
+              0.015
+            ],
+            "type": "VindrRandomGaussianNoise"
+          },
+          {
+            "keep_empty": true,
+            "min_gt_bbox_wh": [
+              2.0,
+              2.0
+            ],
+            "type": "FilterAnnotations"
+          },
+          {
+            "type": "PackDetInputs"
+          }
+        ],
+        "type": "CocoDataset"
+      },
+      "num_workers": 8,
+      "persistent_workers": true,
+      "sampler": {
+        "_scope_": "mmdet",
+        "shuffle": true,
+        "type": "DefaultSampler"
+      }
+    },
+    "val_dataloader": {
+      "batch_size": 4,
+      "dataset": {
+        "_scope_": "mmdet",
+        "ann_file": "annotations/val.json",
+        "backend_args": null,
+        "data_prefix": {
+          "img": ""
+        },
+        "data_root": "",
+        "metainfo": {
+          "classes": [
+            "Mass"
+          ],
+          "palette": [
+            [
+              220,
+              20,
+              60
+            ]
+          ]
+        },
+        "pipeline": [
+          {
+            "rgb_to_bgr": true,
+            "scale_to_255": true,
+            "type": "VindrLoadFloat32TensorFromFile"
+          },
+          {
+            "keep_ratio": true,
+            "scale": [
+              1024,
+              1280
+            ],
+            "type": "Resize"
+          },
+          {
+            "meta_keys": [
+              "img_id",
+              "img_path",
+              "ori_shape",
+              "img_shape",
+              "scale_factor"
+            ],
+            "type": "PackDetInputs"
+          }
+        ],
+        "test_mode": true,
+        "type": "CocoDataset"
+      },
+      "drop_last": false,
+      "num_workers": 8,
+      "persistent_workers": true,
+      "sampler": {
+        "_scope_": "mmdet",
+        "shuffle": false,
+        "type": "DefaultSampler"
+      }
+    },
+    "test_dataloader": {
+      "batch_size": 4,
+      "dataset": {
+        "_scope_": "mmdet",
+        "ann_file": "annotations/test.json",
+        "backend_args": null,
+        "data_prefix": {
+          "img": ""
+        },
+        "data_root": "",
+        "metainfo": {
+          "classes": [
+            "Mass"
+          ],
+          "palette": [
+            [
+              220,
+              20,
+              60
+            ]
+          ]
+        },
+        "pipeline": [
+          {
+            "rgb_to_bgr": true,
+            "scale_to_255": true,
+            "type": "VindrLoadFloat32TensorFromFile"
+          },
+          {
+            "keep_ratio": true,
+            "scale": [
+              1024,
+              1280
+            ],
+            "type": "Resize"
+          },
+          {
+            "meta_keys": [
+              "img_id",
+              "img_path",
+              "ori_shape",
+              "img_shape",
+              "scale_factor"
+            ],
+            "type": "PackDetInputs"
+          }
+        ],
+        "test_mode": true,
+        "type": "CocoDataset"
+      },
+      "drop_last": false,
+      "num_workers": 8,
+      "persistent_workers": true,
+      "sampler": {
+        "_scope_": "mmdet",
+        "shuffle": false,
+        "type": "DefaultSampler"
+      }
+    },
+    "val_evaluator": {
+      "_scope_": "mmdet",
+      "backend_args": null,
+      "classwise": true,
+      "format_only": false,
+      "metric": "bbox",
+      "type": "PaperCocoMetric",
+      "ann_file": "annotations/val.json"
+    },
+    "test_evaluator": {
+      "_scope_": "mmdet",
+      "backend_args": null,
+      "classwise": true,
+      "format_only": false,
+      "metric": "bbox",
+      "type": "PaperCocoMetric",
+      "ann_file": "annotations/test.json"
+    },
+    "auto_scale_lr": {
+      "base_batch_size": 16,
+      "enable": false
+    },
+    "custom_imports": {
+      "imports": [
+        "vindr_isbi.transforms",
+        "vindr_isbi.metric"
+      ],
+      "allow_failed_imports": false
+    },
+    "visualizer": {
+      "type": "DetLocalVisualizer",
+      "vis_backends": [
+        {
+          "type": "LocalVisBackend"
+        }
+      ],
+      "name": "visualizer"
+    }
+  },
+  "parameters": {
+    "learning_rate": 0.0005,
+    "batch_size": 4,
+    "accumulation": 1,
+    "amp": true,
+    "epochs": 25,
+    "optimizer": "SGD"
+  },
+  "tuple_paths": [
+    [
+      "model",
+      "backbone",
+      "out_indices"
+    ],
+    [
+      "test_dataloader",
+      "dataset",
+      "metainfo",
+      "classes"
+    ],
+    [
+      "test_dataloader",
+      "dataset",
+      "metainfo",
+      "palette",
+      0
+    ],
+    [
+      "test_dataloader",
+      "dataset",
+      "pipeline",
+      1,
+      "scale"
+    ],
+    [
+      "test_dataloader",
+      "dataset",
+      "pipeline",
+      2,
+      "meta_keys"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "metainfo",
+      "classes"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "metainfo",
+      "palette",
+      0
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "pipeline",
+      2,
+      "scale"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "pipeline",
+      3,
+      "border"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "pipeline",
+      3,
+      "border_val"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "pipeline",
+      3,
+      "scaling_ratio_range"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "pipeline",
+      4,
+      "scale"
+    ],
+    [
+      "train_dataloader",
+      "dataset",
+      "pipeline",
+      7,
+      "min_gt_bbox_wh"
+    ],
+    [
+      "val_dataloader",
+      "dataset",
+      "metainfo",
+      "classes"
+    ],
+    [
+      "val_dataloader",
+      "dataset",
+      "metainfo",
+      "palette",
+      0
+    ],
+    [
+      "val_dataloader",
+      "dataset",
+      "pipeline",
+      1,
+      "scale"
+    ],
+    [
+      "val_dataloader",
+      "dataset",
+      "pipeline",
+      2,
+      "meta_keys"
+    ]
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-23",
+  "dino_convnext_s_fpn-h1600_w1280": {
+    "run_id": "3gs6jzhb",
+    "images": 219,
+    "metrics": {
+      "coco/Mass_precision": 0.354,
+      "coco/bbox_mass_positive_mAP": 0.354,
+      "coco/bbox_mass_positive_mAP_50": 0.709,
+      "coco/bbox_mass_positive_mAP_75": 0.312,
+      "coco/bbox_mass_positive_mAP_s": -1.0,
+      "coco/bbox_mass_positive_mAP_m": 0.284,
+      "coco/bbox_mass_positive_mAP_l": 0.419
+    }
+  },
+  "ultralytics_yolo11-h640_w512": {
+    "run_id": "k2knzytp",
+    "images": 219,
+    "metrics": {
+      "metrics/precision_mass_positive(B)": 0.7677830280721957,
+      "metrics/recall_mass_positive(B)": 0.5358649789029536,
+      "metrics/mAP50_mass_positive(B)": 0.6365722146717495,
+      "metrics/mAP50-95_mass_positive(B)": 0.32303122689048624,
+      "fitness": 0.32303122689048624
+    }
+  },
+  "all_models_retrained": false
+}

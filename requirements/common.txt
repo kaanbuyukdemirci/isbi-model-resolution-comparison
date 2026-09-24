@@ -1,0 +1,11 @@
+# Numerical and image-processing versions from the local reproduction environment.
+numpy==1.26.4
+PyYAML==6.0.3
+opencv-python==4.10.0.84
+pillow==12.2.0
+scipy==1.15.3
+pycocotools==2.0.11
+matplotlib==3.10.9
+pandas==2.3.3
+tqdm==4.67.3
+

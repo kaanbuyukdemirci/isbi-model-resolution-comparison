@@ -1,0 +1,18 @@
+-r common.txt
+--find-links https://download.openmmlab.com/mmcv/dist/cu121/torch2.1.0/index.html
+--only-binary mmcv
+torch==2.1.0
+torchvision==0.16.0
+mmcv==2.1.0
+mmengine==0.10.7
+mmdet==3.3.0
+mmpretrain==1.2.0
+transformers==4.56.2
+huggingface-hub==0.36.2
+tokenizers==0.22.2
+safetensors==0.7.0
+fairscale==0.4.13
+nltk==3.10.0
+einops==0.8.2
+yapf==0.43.0
+
